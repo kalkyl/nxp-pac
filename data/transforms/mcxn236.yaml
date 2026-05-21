@@ -4,4 +4,291 @@ includes:
   - useless.yaml
   - mcx/gpio.yaml
 transforms:
+  - !RenamePeripherals
+    from: PORT([0-4])
+    to: PORT${1}_RAW
+
+  - !Add
+    ir:
+      block/port::Port:
+        description: Port Control.
+        items:
+        - name: verid
+          description: Version ID.
+          byte_offset: 0
+          access: Read
+          fieldset: port::Verid
+        - name: gpclr
+          description: Global Pin Control Low.
+          byte_offset: 16
+          fieldset: port::Gpclr
+        - name: gpchr
+          description: Global Pin Control High.
+          byte_offset: 20
+          fieldset: port::Gpchr
+        - name: config
+          description: Configuration.
+          byte_offset: 32
+          fieldset: port::Config
+        - name: pcr
+          description: Pin Control 0.
+          array:
+            len: 32
+            stride: 4
+          byte_offset: 128
+          fieldset: port::Pcr
+      fieldset/port::Config:
+        description: Configuration.
+        fields:
+        - name: range
+          description: Port Voltage Range.
+          bit_offset: 0
+          bit_size: 1
+          enum: port::Range
+      fieldset/port::Gpchr:
+        description: Global Pin Control High.
+        fields:
+        - name: gpwd
+          description: Global Pin Write Data.
+          bit_offset: 0
+          bit_size: 16
+        - name: gpwe
+          description: Global Pin Write Enable.
+          bit_offset: 16
+          bit_size: 1
+          array:
+            len: 16
+            stride: 1
+          enum: port::Gpwe
+      fieldset/port::Gpclr:
+        description: Global Pin Control Low.
+        fields:
+        - name: gpwd
+          description: Global Pin Write Data.
+          bit_offset: 0
+          bit_size: 16
+        - name: gpwe
+          description: Global Pin Write Enable.
+          bit_offset: 16
+          bit_size: 1
+          array:
+            len: 16
+            stride: 1
+          enum: port::Gpwe
+      fieldset/port::Pcr:
+        description: Pin Control 2.
+        fields:
+        - name: ps
+          description: Pull Select.
+          bit_offset: 0
+          bit_size: 1
+          enum: port::Ps
+        - name: pe
+          description: Pull Enable.
+          bit_offset: 1
+          bit_size: 1
+          enum: port::Pe
+        - name: sre
+          description: Slew Rate Enable.
+          bit_offset: 3
+          bit_size: 1
+          enum: port::Sre
+        - name: ode
+          description: Open Drain Enable.
+          bit_offset: 5
+          bit_size: 1
+          enum: port::Ode
+        - name: dse
+          description: Drive Strength Enable.
+          bit_offset: 6
+          bit_size: 1
+          enum: port::Dse
+        - name: mux
+          description: Pin Multiplex Control.
+          bit_offset: 8
+          bit_size: 4
+          enum: port::Mux
+        - name: ibe
+          description: Input Buffer Enable.
+          bit_offset: 12
+          bit_size: 1
+          enum: port::Ibe
+        - name: inv
+          description: Invert Input.
+          bit_offset: 13
+          bit_size: 1
+          enum: port::Inv
+        - name: lk
+          description: Lock Register.
+          bit_offset: 15
+          bit_size: 1
+          enum: port::Lk
+      fieldset/port::Verid:
+        description: Version ID.
+        fields:
+        - name: feature
+          description: Feature Specification Number.
+          bit_offset: 0
+          bit_size: 16
+          enum: port::Feature
+        - name: minor
+          description: Minor Version Number.
+          bit_offset: 16
+          bit_size: 8
+        - name: major
+          description: Major Version Number.
+          bit_offset: 24
+          bit_size: 8
+      enum/port::Dse:
+        bit_size: 1
+        variants:
+        - name: Dse0
+          description: Low.
+          value: 0
+        - name: Dse1
+          description: High.
+          value: 1
+      enum/port::Feature:
+        bit_size: 16
+        variants:
+        - name: Feature0
+          description: Basic implementation.
+          value: 0
+      enum/port::Gpwe:
+        bit_size: 1
+        variants:
+        - name: Gpwe0
+          description: Not updated.
+          value: 0
+        - name: Gpwe1
+          description: Updated.
+          value: 1
+      enum/port::Ibe:
+        bit_size: 1
+        variants:
+        - name: Ibe0
+          description: Disables.
+          value: 0
+        - name: Ibe1
+          description: Enables.
+          value: 1
+      enum/port::Inv:
+        bit_size: 1
+        variants:
+        - name: Inv0
+          description: Does not invert.
+          value: 0
+        - name: Inv1
+          description: Inverts.
+          value: 1
+      enum/port::Lk:
+        bit_size: 1
+        variants:
+        - name: Lk0
+          description: Does not lock.
+          value: 0
+        - name: Lk1
+          description: Locks.
+          value: 1
+      enum/port::Mux:
+        bit_size: 4
+        variants:
+        - name: Mux0
+          value: 0
+        - name: Mux1
+          value: 1
+        - name: Mux2
+          value: 2
+        - name: Mux3
+          value: 3
+        - name: Mux4
+          value: 4
+        - name: Mux5
+          value: 5
+        - name: Mux6
+          value: 6
+        - name: Mux7
+          value: 7
+        - name: Mux8
+          value: 8
+        - name: Mux9
+          value: 9
+        - name: Mux10
+          value: 10
+        - name: Mux11
+          value: 11
+        - name: Mux12
+          value: 12
+        - name: Mux13
+          value: 13
+      enum/port::Ode:
+        bit_size: 1
+        variants:
+        - name: Ode0
+          description: Disables.
+          value: 0
+        - name: Ode1
+          description: Enables.
+          value: 1
+      enum/port::Pe:
+        bit_size: 1
+        variants:
+        - name: Pe0
+          description: Disables.
+          value: 0
+        - name: Pe1
+          description: Enables.
+          value: 1
+      enum/port::Ps:
+        bit_size: 1
+        variants:
+        - name: Ps0
+          description: Enables internal pulldown resistor.
+          value: 0
+        - name: Ps1
+          description: Enables internal pullup resistor.
+          value: 1
+      enum/port::Range:
+        bit_size: 1
+        variants:
+        - name: Range0
+          description: 1.71 V-3.6 V.
+          value: 0
+        - name: Range1
+          description: 2.70 V-3.6 V.
+          value: 1
+      enum/port::Sre:
+        bit_size: 1
+        variants:
+        - name: Sre0
+          description: Fast.
+          value: 0
+        - name: Sre1
+          description: Slow.
+          value: 1
+
+  - !AddPeripherals
+    devices: .*
+    peripherals:
+      - name: PORT0
+        description: PORT (unified MetaPAC)
+        base_address: 0x40116000
+        block: port::Port
+      - name: PORT1
+        description: PORT (unified MetaPAC)
+        base_address: 0x40117000
+        block: port::Port
+      - name: PORT2
+        description: PORT (unified MetaPAC)
+        base_address: 0x40118000
+        block: port::Port
+      - name: PORT3
+        description: PORT (unified MetaPAC)
+        base_address: 0x40119000
+        block: port::Port
+      - name: PORT4
+        description: PORT (unified MetaPAC)
+        base_address: 0x4011a000
+        block: port::Port
+
   - !Sort

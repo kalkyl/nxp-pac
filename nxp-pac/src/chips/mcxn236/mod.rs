@@ -601,24 +601,24 @@ pub const ADC0: adc::Adc = unsafe { adc::Adc::from_ptr(0x4010_d000usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4010_e000usize as _) };
 #[doc = "VREF"]
 pub const VREF0: vref0::Vref0 = unsafe { vref0::Vref0::from_ptr(0x4011_1000usize as _) };
-#[doc = "PORT (raw chip-specific)"]
+#[doc = "PORT"]
 pub const PORT0_RAW: port0::Port0 = unsafe { port0::Port0::from_ptr(0x4011_6000usize as _) };
-#[doc = "PORT (raw chip-specific)"]
-pub const PORT1_RAW: port1::Port1 = unsafe { port1::Port1::from_ptr(0x4011_7000usize as _) };
-#[doc = "PORT (raw chip-specific)"]
-pub const PORT2_RAW: port2::Port2 = unsafe { port2::Port2::from_ptr(0x4011_8000usize as _) };
-#[doc = "PORT (raw chip-specific)"]
-pub const PORT3_RAW: port3::Port3 = unsafe { port3::Port3::from_ptr(0x4011_9000usize as _) };
-#[doc = "PORT (raw chip-specific)"]
-pub const PORT4_RAW: port4::Port4 = unsafe { port4::Port4::from_ptr(0x4011_a000usize as _) };
 #[doc = "PORT (unified MetaPAC)"]
 pub const PORT0: port::Port = unsafe { port::Port::from_ptr(0x4011_6000usize as _) };
+#[doc = "PORT"]
+pub const PORT1_RAW: port1::Port1 = unsafe { port1::Port1::from_ptr(0x4011_7000usize as _) };
 #[doc = "PORT (unified MetaPAC)"]
 pub const PORT1: port::Port = unsafe { port::Port::from_ptr(0x4011_7000usize as _) };
+#[doc = "PORT"]
+pub const PORT2_RAW: port2::Port2 = unsafe { port2::Port2::from_ptr(0x4011_8000usize as _) };
 #[doc = "PORT (unified MetaPAC)"]
 pub const PORT2: port::Port = unsafe { port::Port::from_ptr(0x4011_8000usize as _) };
+#[doc = "PORT"]
+pub const PORT3_RAW: port3::Port3 = unsafe { port3::Port3::from_ptr(0x4011_9000usize as _) };
 #[doc = "PORT (unified MetaPAC)"]
 pub const PORT3: port::Port = unsafe { port::Port::from_ptr(0x4011_9000usize as _) };
+#[doc = "PORT"]
+pub const PORT4_RAW: port4::Port4 = unsafe { port4::Port4::from_ptr(0x4011_a000usize as _) };
 #[doc = "PORT (unified MetaPAC)"]
 pub const PORT4: port::Port = unsafe { port::Port::from_ptr(0x4011_a000usize as _) };
 #[doc = "AHBSC"]
@@ -682,14 +682,13 @@ pub mod otpc0;
 pub mod pdm;
 pub mod pint0;
 pub mod pkc0;
+pub mod port;
 pub mod port0;
 pub mod port1;
 pub mod port2;
 pub mod port3;
 pub mod port4;
 pub mod port5;
-#[path = "../../meta_peripherals/mcxn/PORT.rs"]
-pub mod port;
 pub mod puf;
 pub mod puf_ctrl;
 pub mod pwm;
