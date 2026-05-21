@@ -1,0 +1,7 @@
+includes:
+  - sanitize.yaml
+  - cm33.yaml
+  - useless.yaml
+  - mcx/gpio.yaml
+transforms:
+  - !Sort

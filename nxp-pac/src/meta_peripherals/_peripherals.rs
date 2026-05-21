@@ -35,4 +35,10 @@ pub const META_PERIPHERALS: &[&str] = &[
     "mcxa/USB",
     "mcxa/VBAT",
     "mcxa/WWDT",
+    "mcxn/CTIMER",
+    "mcxn/DMA",
+    "mcxn/GPIO",
+    "mcxn/LPUART",
+    "mcxn/OSTIMER",
+    "mcxn/PORT",
 ];
