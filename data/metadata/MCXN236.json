@@ -2433,6 +2433,44 @@
         "reset": "dma0_rst",
         "config": "ahbclkctrl0"
       }
+    },
+    {
+      "name": "FLEXIO0",
+      "address": "0x40105000",
+      "block": "flexio0",
+      "signals": [
+        { "name": "D0",  "pins": [{ "pin": "P0_0",  "alt": 7 }] },
+        { "name": "D1",  "pins": [{ "pin": "P0_1",  "alt": 7 }] },
+        { "name": "D2",  "pins": [{ "pin": "P0_2",  "alt": 7 }] },
+        { "name": "D3",  "pins": [{ "pin": "P0_3",  "alt": 7 }] },
+        { "name": "D4",  "pins": [{ "pin": "P0_4",  "alt": 7 }] },
+        { "name": "D5",  "pins": [{ "pin": "P0_5",  "alt": 7 }] },
+        { "name": "D6",  "pins": [{ "pin": "P0_6",  "alt": 7 }] },
+        { "name": "D7",  "pins": [{ "pin": "P0_7",  "alt": 7 }] },
+        { "name": "D8",  "pins": [{ "pin": "P0_8",  "alt": 7 }] },
+        { "name": "D9",  "pins": [{ "pin": "P0_9",  "alt": 7 }] },
+        { "name": "D10", "pins": [{ "pin": "P0_10", "alt": 7 }] },
+        { "name": "D11", "pins": [{ "pin": "P0_11", "alt": 7 }] },
+        { "name": "D12", "pins": [{ "pin": "P0_12", "alt": 7 }] },
+        { "name": "D13", "pins": [{ "pin": "P0_13", "alt": 7 }] },
+        { "name": "D14", "pins": [{ "pin": "P0_14", "alt": 7 }] },
+        { "name": "D15", "pins": [{ "pin": "P0_15", "alt": 7 }] }
+      ],
+      "dma_muxing": [
+        { "signal": "FLEXIO0SR0", "mux": "EDMA0", "request": 85 },
+        { "signal": "FLEXIO0SR1", "mux": "EDMA0", "request": 86 },
+        { "signal": "FLEXIO0SR2", "mux": "EDMA0", "request": 87 },
+        { "signal": "FLEXIO0SR3", "mux": "EDMA0", "request": 88 },
+        { "signal": "FLEXIO0SR4", "mux": "EDMA0", "request": 89 },
+        { "signal": "FLEXIO0SR5", "mux": "EDMA0", "request": 90 },
+        { "signal": "FLEXIO0SR6", "mux": "EDMA0", "request": 91 },
+        { "signal": "FLEXIO0SR7", "mux": "EDMA0", "request": 92 }
+      ],
+      "gate": {
+        "enable": "flexio",
+        "reset": "flexio_rst",
+        "config": "ahbclkctrl2"
+      }
     }
   ]
 }

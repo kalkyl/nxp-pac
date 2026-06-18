@@ -1,11 +1,11 @@
 #[doc = "FLEXIO."]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Flexio0 {
+pub struct Flexio {
     ptr: *mut u8,
 }
-unsafe impl Send for Flexio0 {}
-unsafe impl Sync for Flexio0 {}
-impl Flexio0 {
+unsafe impl Send for Flexio {}
+unsafe impl Sync for Flexio {}
+impl Flexio {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }

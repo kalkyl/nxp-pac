@@ -3,7 +3,21 @@ includes:
   - cm33.yaml
   - useless.yaml
   - mcx/gpio.yaml
+  - mcxn/adc.yaml
 transforms:
+  # Normalize FlexIO module/type names: flexio0::Flexio0 → flexio::Flexio
+  # Scoped to FlexIO only (remove-suffix.yaml is not included to avoid
+  # touching lpuart0, gpio0, edma_0, etc.)
+  - !Rename
+    from: flexio0::(.+)
+    to: flexio::$1
+    type: All
+
+  - !Rename
+    from: flexio::(.+)0
+    to: flexio::$1
+    type: Block
+
   - !RenamePeripherals
     from: PORT([0-4])
     to: PORT${1}_RAW

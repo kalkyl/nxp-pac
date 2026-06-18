@@ -2620,6 +2620,205 @@ pub const PERIPHERALS: &[Peripheral] = &[
             config: Some("ahbclkctrl0"),
         }),
     },
+    Peripheral {
+        name: "FLEXIO0",
+        address: 0x40105000,
+        driver_name: "flexio0",
+        signals: &[
+            Signal {
+                name: "D0",
+                pins: &[SignalPin {
+                    pin: "P0_0",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D1",
+                pins: &[SignalPin {
+                    pin: "P0_1",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D2",
+                pins: &[SignalPin {
+                    pin: "P0_2",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D3",
+                pins: &[SignalPin {
+                    pin: "P0_3",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D4",
+                pins: &[SignalPin {
+                    pin: "P0_4",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D5",
+                pins: &[SignalPin {
+                    pin: "P0_5",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D6",
+                pins: &[SignalPin {
+                    pin: "P0_6",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D7",
+                pins: &[SignalPin {
+                    pin: "P0_7",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D8",
+                pins: &[SignalPin {
+                    pin: "P0_8",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D9",
+                pins: &[SignalPin {
+                    pin: "P0_9",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D10",
+                pins: &[SignalPin {
+                    pin: "P0_10",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D11",
+                pins: &[SignalPin {
+                    pin: "P0_11",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D12",
+                pins: &[SignalPin {
+                    pin: "P0_12",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D13",
+                pins: &[SignalPin {
+                    pin: "P0_13",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D14",
+                pins: &[SignalPin {
+                    pin: "P0_14",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "D15",
+                pins: &[SignalPin {
+                    pin: "P0_15",
+                    alt: 7u8,
+                    iomuxc_daisy: None,
+                }],
+                iomuxc_daisy: None,
+            },
+        ],
+        flexcomm: None,
+        dma_muxing: &[
+            DmaMux {
+                signal: "FLEXIO0SR0",
+                mux: "EDMA0",
+                request: 85,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR1",
+                mux: "EDMA0",
+                request: 86,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR2",
+                mux: "EDMA0",
+                request: 87,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR3",
+                mux: "EDMA0",
+                request: 88,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR4",
+                mux: "EDMA0",
+                request: 89,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR5",
+                mux: "EDMA0",
+                request: 90,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR6",
+                mux: "EDMA0",
+                request: 91,
+            },
+            DmaMux {
+                signal: "FLEXIO0SR7",
+                mux: "EDMA0",
+                request: 92,
+            },
+        ],
+        gate: Some(Gate {
+            enable: "flexio",
+            reset: Some("flexio_rst"),
+            config: Some("ahbclkctrl2"),
+        }),
+    },
 ];
 pub const INTERRUPTS: &[(&str, u32)] = &[
     ("OR", 0u32),

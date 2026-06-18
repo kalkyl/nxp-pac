@@ -1,0 +1,67 @@
+transforms:
+  # MCXN LPADC uses separate adc::vals:: namespace (unlike MCXA which is flat).
+  # Merge per-command Cmdl enum variants into shared names.
+  # e.g. adc::vals::Cmdl1Adch, adc::vals::Cmdl2Adch, ... → adc::vals::Adch
+  - !MergeEnums
+    from: adc::vals::Cmdl(\d+)(.+)
+    to: adc::vals::$2
+
+  # Merge per-command Cmdh enum variants into shared names.
+  # e.g. adc::vals::Cmdh1Avgs, adc::vals::Cmdh2Avgs, ... → adc::vals::Avgs
+  - !MergeEnums
+    from: adc::vals::Cmdh(\d+)(.+)
+    to: adc::vals::$2
+
+  # Use Cmdl1 fieldset as the reference, rename it to Cmdl.
+  - !Rename
+    from: adc::regs::Cmdl1
+    to: adc::regs::Cmdl
+
+  # Delete the remaining per-command Cmdl fieldsets (now redundant).
+  - !Delete
+    from: adc::regs::Cmdl\d+
+
+  # Point all cmdl{n} registers at the unified Cmdl fieldset.
+  - !ModifyRegisters
+    blocks: adc::Adc
+    registers: cmdl\d+
+    fieldset: adc::regs::Cmdl
+
+  # Convert cmdl1..cmdl15 registers into a cmdl[n] array.
+  - !MakeRegisterArray
+    blocks: adc::Adc
+    from: cmdl(\d+)
+    to: cmdl
+
+  # Use Cmdh1 fieldset as the reference, rename it to Cmdh.
+  - !Rename
+    from: adc::regs::Cmdh1
+    to: adc::regs::Cmdh
+
+  # Delete the remaining per-command Cmdh fieldsets (now redundant).
+  - !Delete
+    from: adc::regs::Cmdh\d+
+
+  # Point all cmdh{n} registers at the unified Cmdh fieldset.
+  - !ModifyRegisters
+    blocks: adc::Adc
+    registers: cmdh\d+
+    fieldset: adc::regs::Cmdh
+
+  # Convert cmdh1..cmdh15 registers into a cmdh[n] array.
+  - !MakeRegisterArray
+    blocks: adc::Adc
+    from: cmdh(\d+)
+    to: cmdh
+
+  # Software trigger numbered enums are not useful.
+  - !DeleteEnums
+    from: adc::vals::Swt(\d+)
+
+  # ADC A-side channel select is not correct at all, better use bare u8.
+  - !DeleteEnums
+    from: adc::vals::Adch
+
+  # ADC B-side channel select is also better as bare u8.
+  - !DeleteEnums
+    from: adc::vals::AltbAdch

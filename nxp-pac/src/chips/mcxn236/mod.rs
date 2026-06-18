@@ -577,7 +577,7 @@ pub const CAN0: can::Can = unsafe { can::Can::from_ptr(0x400d_4000usize as _) };
 #[doc = "CAN"]
 pub const CAN1: can::Can = unsafe { can::Can::from_ptr(0x400d_8000usize as _) };
 #[doc = "FLEXIO"]
-pub const FLEXIO0: flexio0::Flexio0 = unsafe { flexio0::Flexio0::from_ptr(0x4010_5000usize as _) };
+pub const FLEXIO0: flexio::Flexio = unsafe { flexio::Flexio::from_ptr(0x4010_5000usize as _) };
 #[doc = "SAI"]
 pub const SAI0: sai::Sai = unsafe { sai::Sai::from_ptr(0x4010_6000usize as _) };
 #[doc = "SAI"]
@@ -660,7 +660,7 @@ pub mod eim0;
 pub mod erm0;
 pub mod evtg0;
 pub mod ewm0;
-pub mod flexio0;
+pub mod flexio;
 pub mod fmu0;
 pub mod fmu0test;
 pub mod freqme0;
