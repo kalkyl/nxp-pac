@@ -2459,7 +2459,40 @@ pub const PERIPHERALS: &[Peripheral] = &[
         name: "LPUART3",
         address: 0x40095000,
         driver_name: "mcxn/LPUART",
-        signals: &[],
+        signals: &[
+            Signal {
+                name: "TX",
+                pins: &[
+                    SignalPin {
+                        pin: "P1_1",
+                        alt: 2u8,
+                        iomuxc_daisy: None,
+                    },
+                    SignalPin {
+                        pin: "P1_13",
+                        alt: 3u8,
+                        iomuxc_daisy: None,
+                    },
+                ],
+                iomuxc_daisy: None,
+            },
+            Signal {
+                name: "RX",
+                pins: &[
+                    SignalPin {
+                        pin: "P1_0",
+                        alt: 2u8,
+                        iomuxc_daisy: None,
+                    },
+                    SignalPin {
+                        pin: "P1_12",
+                        alt: 3u8,
+                        iomuxc_daisy: None,
+                    },
+                ],
+                iomuxc_daisy: None,
+            },
+        ],
         flexcomm: Some("LP_FLEXCOMM3"),
         dma_muxing: &[
             DmaMux {

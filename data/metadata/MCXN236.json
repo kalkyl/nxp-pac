@@ -2277,7 +2277,34 @@
       "name": "LPUART3",
       "address": "0x40095000",
       "block": "mcxn/LPUART",
-      "signals": [],
+      "signals": [
+        {
+          "name": "TX",
+          "pins": [
+            {
+              "pin": "P1_1",
+              "alt": 2
+            },
+            {
+              "pin": "P1_13",
+              "alt": 3
+            }
+          ]
+        },
+        {
+          "name": "RX",
+          "pins": [
+            {
+              "pin": "P1_0",
+              "alt": 2
+            },
+            {
+              "pin": "P1_12",
+              "alt": 3
+            }
+          ]
+        }
+      ],
       "flexcomm": "LP_FLEXCOMM3",
       "dma_muxing": [
         {
