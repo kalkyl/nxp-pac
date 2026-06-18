@@ -3258,6 +3258,102 @@ pub const PERIPHERALS: &[Peripheral] = &[
             config: Some("ahbclkctrl2"),
         }),
     },
+    Peripheral {
+        name: "I3C0",
+        address: 0x40021000,
+        driver_name: "mcxa/I3C",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[
+            DmaMux {
+                signal: "I3C0Rx",
+                mux: "EDMA0",
+                request: 95,
+            },
+            DmaMux {
+                signal: "I3C0Tx",
+                mux: "EDMA0",
+                request: 96,
+            },
+        ],
+        gate: Some(Gate {
+            enable: "i3c0",
+            reset: Some("i3c0_rst"),
+            config: Some("ahbclkctrl3"),
+        }),
+    },
+    Peripheral {
+        name: "I3C1",
+        address: 0x40022000,
+        driver_name: "mcxa/I3C",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[
+            DmaMux {
+                signal: "I3C1Rx",
+                mux: "EDMA0",
+                request: 97,
+            },
+            DmaMux {
+                signal: "I3C1Tx",
+                mux: "EDMA0",
+                request: 98,
+            },
+        ],
+        gate: Some(Gate {
+            enable: "i3c1",
+            reset: Some("i3c1_rst"),
+            config: Some("ahbclkctrl3"),
+        }),
+    },
+    Peripheral {
+        name: "SAI0",
+        address: 0x40106000,
+        driver_name: "",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[
+            DmaMux {
+                signal: "Sai0Rx",
+                mux: "EDMA0",
+                request: 99,
+            },
+            DmaMux {
+                signal: "Sai0Tx",
+                mux: "EDMA0",
+                request: 100,
+            },
+        ],
+        gate: Some(Gate {
+            enable: "sai0",
+            reset: Some("sai0_rst"),
+            config: Some("ahbclkctrl2"),
+        }),
+    },
+    Peripheral {
+        name: "SAI1",
+        address: 0x40107000,
+        driver_name: "",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[
+            DmaMux {
+                signal: "Sai1Rx",
+                mux: "EDMA0",
+                request: 101,
+            },
+            DmaMux {
+                signal: "Sai1Tx",
+                mux: "EDMA0",
+                request: 102,
+            },
+        ],
+        gate: Some(Gate {
+            enable: "sai1",
+            reset: Some("sai1_rst"),
+            config: Some("ahbclkctrl2"),
+        }),
+    },
 ];
 pub const INTERRUPTS: &[(&str, u32)] = &[
     ("OR", 0u32),
