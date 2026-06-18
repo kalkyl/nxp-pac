@@ -2439,32 +2439,632 @@
       "address": "0x40105000",
       "block": "flexio0",
       "signals": [
-        { "name": "D0",  "pins": [{ "pin": "P0_0",  "alt": 7 }] },
-        { "name": "D1",  "pins": [{ "pin": "P0_1",  "alt": 7 }] },
-        { "name": "D2",  "pins": [{ "pin": "P0_2",  "alt": 7 }] },
-        { "name": "D3",  "pins": [{ "pin": "P0_3",  "alt": 7 }] },
-        { "name": "D4",  "pins": [{ "pin": "P0_4",  "alt": 7 }] },
-        { "name": "D5",  "pins": [{ "pin": "P0_5",  "alt": 7 }] },
-        { "name": "D6",  "pins": [{ "pin": "P0_6",  "alt": 7 }] },
-        { "name": "D7",  "pins": [{ "pin": "P0_7",  "alt": 7 }] },
-        { "name": "D8",  "pins": [{ "pin": "P0_8",  "alt": 7 }] },
-        { "name": "D9",  "pins": [{ "pin": "P0_9",  "alt": 7 }] },
-        { "name": "D10", "pins": [{ "pin": "P0_10", "alt": 7 }] },
-        { "name": "D11", "pins": [{ "pin": "P0_11", "alt": 7 }] },
-        { "name": "D12", "pins": [{ "pin": "P0_12", "alt": 7 }] },
-        { "name": "D13", "pins": [{ "pin": "P0_13", "alt": 7 }] },
-        { "name": "D14", "pins": [{ "pin": "P0_14", "alt": 7 }] },
-        { "name": "D15", "pins": [{ "pin": "P0_15", "alt": 7 }] }
+        {
+          "name": "D0",
+          "pins": [
+            {
+              "pin": "P0_0",
+              "alt": 7
+            },
+            {
+              "pin": "P0_16",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D1",
+          "pins": [
+            {
+              "pin": "P0_1",
+              "alt": 7
+            },
+            {
+              "pin": "P0_17",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D2",
+          "pins": [
+            {
+              "pin": "P0_2",
+              "alt": 7
+            },
+            {
+              "pin": "P0_18",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D3",
+          "pins": [
+            {
+              "pin": "P0_3",
+              "alt": 7
+            },
+            {
+              "pin": "P0_19",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D4",
+          "pins": [
+            {
+              "pin": "P0_4",
+              "alt": 7
+            },
+            {
+              "pin": "P0_12",
+              "alt": 7
+            },
+            {
+              "pin": "P0_20",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D5",
+          "pins": [
+            {
+              "pin": "P0_5",
+              "alt": 7
+            },
+            {
+              "pin": "P0_13",
+              "alt": 7
+            },
+            {
+              "pin": "P0_21",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D6",
+          "pins": [
+            {
+              "pin": "P0_6",
+              "alt": 7
+            },
+            {
+              "pin": "P0_14",
+              "alt": 7
+            },
+            {
+              "pin": "P0_22",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D7",
+          "pins": [
+            {
+              "pin": "P0_7",
+              "alt": 7
+            },
+            {
+              "pin": "P0_15",
+              "alt": 7
+            },
+            {
+              "pin": "P0_23",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D8",
+          "pins": [
+            {
+              "pin": "P4_0",
+              "alt": 7
+            },
+            {
+              "pin": "P2_0",
+              "alt": 7
+            },
+            {
+              "pin": "P3_0",
+              "alt": 7
+            },
+            {
+              "pin": "P1_0",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D9",
+          "pins": [
+            {
+              "pin": "P4_1",
+              "alt": 7
+            },
+            {
+              "pin": "P2_1",
+              "alt": 7
+            },
+            {
+              "pin": "P3_1",
+              "alt": 7
+            },
+            {
+              "pin": "P1_1",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D10",
+          "pins": [
+            {
+              "pin": "P4_2",
+              "alt": 7
+            },
+            {
+              "pin": "P2_2",
+              "alt": 7
+            },
+            {
+              "pin": "P3_2",
+              "alt": 7
+            },
+            {
+              "pin": "P1_2",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D11",
+          "pins": [
+            {
+              "pin": "P4_3",
+              "alt": 7
+            },
+            {
+              "pin": "P2_3",
+              "alt": 7
+            },
+            {
+              "pin": "P3_3",
+              "alt": 7
+            },
+            {
+              "pin": "P1_3",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D12",
+          "pins": [
+            {
+              "pin": "P4_4",
+              "alt": 7
+            },
+            {
+              "pin": "P2_4",
+              "alt": 7
+            },
+            {
+              "pin": "P3_4",
+              "alt": 7
+            },
+            {
+              "pin": "P1_4",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D13",
+          "pins": [
+            {
+              "pin": "P4_5",
+              "alt": 7
+            },
+            {
+              "pin": "P2_5",
+              "alt": 7
+            },
+            {
+              "pin": "P3_5",
+              "alt": 7
+            },
+            {
+              "pin": "P1_5",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D14",
+          "pins": [
+            {
+              "pin": "P4_6",
+              "alt": 7
+            },
+            {
+              "pin": "P2_6",
+              "alt": 7
+            },
+            {
+              "pin": "P3_6",
+              "alt": 7
+            },
+            {
+              "pin": "P1_6",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D15",
+          "pins": [
+            {
+              "pin": "P4_7",
+              "alt": 7
+            },
+            {
+              "pin": "P2_7",
+              "alt": 7
+            },
+            {
+              "pin": "P3_7",
+              "alt": 7
+            },
+            {
+              "pin": "P1_7",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D16",
+          "pins": [
+            {
+              "pin": "P1_8",
+              "alt": 7
+            },
+            {
+              "pin": "P2_8",
+              "alt": 7
+            },
+            {
+              "pin": "P3_8",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D17",
+          "pins": [
+            {
+              "pin": "P1_9",
+              "alt": 7
+            },
+            {
+              "pin": "P2_9",
+              "alt": 7
+            },
+            {
+              "pin": "P3_9",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D18",
+          "pins": [
+            {
+              "pin": "P1_10",
+              "alt": 7
+            },
+            {
+              "pin": "P2_10",
+              "alt": 7
+            },
+            {
+              "pin": "P3_10",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D19",
+          "pins": [
+            {
+              "pin": "P1_11",
+              "alt": 7
+            },
+            {
+              "pin": "P2_11",
+              "alt": 7
+            },
+            {
+              "pin": "P3_11",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D20",
+          "pins": [
+            {
+              "pin": "P1_12",
+              "alt": 7
+            },
+            {
+              "pin": "P2_12",
+              "alt": 7
+            },
+            {
+              "pin": "P3_12",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D21",
+          "pins": [
+            {
+              "pin": "P1_13",
+              "alt": 7
+            },
+            {
+              "pin": "P2_13",
+              "alt": 7
+            },
+            {
+              "pin": "P3_13",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D22",
+          "pins": [
+            {
+              "pin": "P1_14",
+              "alt": 7
+            },
+            {
+              "pin": "P2_14",
+              "alt": 7
+            },
+            {
+              "pin": "P3_14",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D23",
+          "pins": [
+            {
+              "pin": "P1_15",
+              "alt": 7
+            },
+            {
+              "pin": "P2_15",
+              "alt": 7
+            },
+            {
+              "pin": "P3_15",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D24",
+          "pins": [
+            {
+              "pin": "P1_16",
+              "alt": 7
+            },
+            {
+              "pin": "P2_16",
+              "alt": 7
+            },
+            {
+              "pin": "P3_16",
+              "alt": 7
+            },
+            {
+              "pin": "P3_24",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D25",
+          "pins": [
+            {
+              "pin": "P1_17",
+              "alt": 7
+            },
+            {
+              "pin": "P2_17",
+              "alt": 7
+            },
+            {
+              "pin": "P3_17",
+              "alt": 7
+            },
+            {
+              "pin": "P3_25",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D26",
+          "pins": [
+            {
+              "pin": "P1_18",
+              "alt": 7
+            },
+            {
+              "pin": "P2_18",
+              "alt": 7
+            },
+            {
+              "pin": "P3_18",
+              "alt": 7
+            },
+            {
+              "pin": "P3_26",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D27",
+          "pins": [
+            {
+              "pin": "P1_19",
+              "alt": 7
+            },
+            {
+              "pin": "P2_19",
+              "alt": 7
+            },
+            {
+              "pin": "P3_19",
+              "alt": 7
+            },
+            {
+              "pin": "P3_27",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D28",
+          "pins": [
+            {
+              "pin": "P2_20",
+              "alt": 7
+            },
+            {
+              "pin": "P3_20",
+              "alt": 7
+            },
+            {
+              "pin": "P3_28",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D29",
+          "pins": [
+            {
+              "pin": "P2_21",
+              "alt": 7
+            },
+            {
+              "pin": "P3_21",
+              "alt": 7
+            },
+            {
+              "pin": "P3_29",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D30",
+          "pins": [
+            {
+              "pin": "P1_30",
+              "alt": 7
+            },
+            {
+              "pin": "P2_22",
+              "alt": 7
+            },
+            {
+              "pin": "P3_22",
+              "alt": 7
+            },
+            {
+              "pin": "P3_30",
+              "alt": 7
+            }
+          ]
+        },
+        {
+          "name": "D31",
+          "pins": [
+            {
+              "pin": "P1_31",
+              "alt": 7
+            },
+            {
+              "pin": "P2_23",
+              "alt": 7
+            },
+            {
+              "pin": "P3_23",
+              "alt": 7
+            },
+            {
+              "pin": "P3_31",
+              "alt": 7
+            }
+          ]
+        }
       ],
       "dma_muxing": [
-        { "signal": "FLEXIO0SR0", "mux": "EDMA0", "request": 85 },
-        { "signal": "FLEXIO0SR1", "mux": "EDMA0", "request": 86 },
-        { "signal": "FLEXIO0SR2", "mux": "EDMA0", "request": 87 },
-        { "signal": "FLEXIO0SR3", "mux": "EDMA0", "request": 88 },
-        { "signal": "FLEXIO0SR4", "mux": "EDMA0", "request": 89 },
-        { "signal": "FLEXIO0SR5", "mux": "EDMA0", "request": 90 },
-        { "signal": "FLEXIO0SR6", "mux": "EDMA0", "request": 91 },
-        { "signal": "FLEXIO0SR7", "mux": "EDMA0", "request": 92 }
+        {
+          "signal": "FLEXIO0SR0",
+          "mux": "EDMA0",
+          "request": 85
+        },
+        {
+          "signal": "FLEXIO0SR1",
+          "mux": "EDMA0",
+          "request": 86
+        },
+        {
+          "signal": "FLEXIO0SR2",
+          "mux": "EDMA0",
+          "request": 87
+        },
+        {
+          "signal": "FLEXIO0SR3",
+          "mux": "EDMA0",
+          "request": 88
+        },
+        {
+          "signal": "FLEXIO0SR4",
+          "mux": "EDMA0",
+          "request": 89
+        },
+        {
+          "signal": "FLEXIO0SR5",
+          "mux": "EDMA0",
+          "request": 90
+        },
+        {
+          "signal": "FLEXIO0SR6",
+          "mux": "EDMA0",
+          "request": 91
+        },
+        {
+          "signal": "FLEXIO0SR7",
+          "mux": "EDMA0",
+          "request": 92
+        }
       ],
       "gate": {
         "enable": "flexio",
