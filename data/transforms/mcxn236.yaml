@@ -4,6 +4,7 @@ includes:
   - useless.yaml
   - mcx/gpio.yaml
   - mcxn/adc.yaml
+  - mcxn/crc.yaml
 transforms:
   # Normalize FlexIO module/type names: flexio0::Flexio0 → flexio::Flexio
   # Scoped to FlexIO only (remove-suffix.yaml is not included to avoid

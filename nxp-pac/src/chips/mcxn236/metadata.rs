@@ -3354,6 +3354,19 @@ pub const PERIPHERALS: &[Peripheral] = &[
             config: Some("ahbclkctrl2"),
         }),
     },
+    Peripheral {
+        name: "CRC0",
+        address: 0x400CB000,
+        driver_name: "mcxn/CRC",
+        signals: &[],
+        flexcomm: None,
+        dma_muxing: &[],
+        gate: Some(Gate {
+            enable: "crc",
+            reset: Some("crc_rst"),
+            config: Some("ahbclkctrl0"),
+        }),
+    },
 ];
 pub const INTERRUPTS: &[(&str, u32)] = &[
     ("OR", 0u32),
